@@ -5,26 +5,19 @@
     android:layout_height="match_parent"
     android:background="#FF5722"
     tools:context=".fragments.SecondFragment">
-    
-    <TextView
-        android:id="@+id/heading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:text="@string/hello_second_fragment" />
+
     <Button
         android:id="@+id/GoToFirst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/heading"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="80dp"
         android:text="@string/goto_first"/>
     <Button
         android:id="@+id/GoToThird"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/GoToFirst"
+        android:layout_marginHorizontal="80dp"
         android:text="@string/goto_third"/>
 </RelativeLayout>
