@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import androidx.navigation.fragment.findNavController
 import com.example.navigationcomponent.R
 import com.example.navigationcomponent.databinding.FragmentFirstFragmentBinding
@@ -14,7 +15,7 @@ class FirstFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding= FragmentFirstFragmentBinding.inflate(inflater , container, false)
         return _binding.root
 
@@ -29,6 +30,14 @@ class FirstFragment : Fragment() {
         _binding.GoToThird.setOnClickListener{
 
             findNavController().navigate(R.id.action_firstFragment_to_thirdFragment)
+        }
+        loadNestedFragment()
+    }
+    private fun loadNestedFragment() {
+        // Use childFragmentManager to load the nested fragment
+        childFragmentManager.commit {
+            replace(R.id.nestedFragmentContainer, NestedFirstFragment())
+            setReorderingAllowed(true)
         }
     }
 }
